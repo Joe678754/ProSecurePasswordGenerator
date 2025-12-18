@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from database import Base
+from backend.database import Base
 
 class User(Base):
     __tablename__ = "users"
@@ -8,3 +8,4 @@ class User(Base):
     email = Column(String, unique=True, index=True)
     password = Column(String)
     is_paid = Column(Boolean, default=False)
+

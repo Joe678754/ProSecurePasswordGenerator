@@ -1,3 +1,15 @@
+from fastapi import FastAPI
+from backend.auth import router
+
+app = FastAPI(title="ProSecure Password Generator")
+
+app.include_router(router)
+
+@app.get("/")
+def root():
+    return {"status": "ProSecure Password Generator is live"}
+# Set your Stripe secret key
+stripe.api_key = os.getenv(sk_test_51SefJDGkobMEHQEESrS1EqmchrjSTNb24tKSpYbuukyIS4drSiJRyFtU4oxZnrtkrMqxcY9hD3WSICHYsno4m0oV00nRBILoib)
 from fastapi import FastAPI, Depends, HTTPException
 from backend.security import generate_password
 from backend.auth import router
